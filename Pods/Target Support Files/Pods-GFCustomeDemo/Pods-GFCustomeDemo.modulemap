@@ -1,0 +1,6 @@
+framework module Pods_GFCustomeDemo {
+  umbrella header "Pods-GFCustomeDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
