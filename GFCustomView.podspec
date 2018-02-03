@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
 s.name         = "GFCustomView"
-s.version      = "0.0.1"
+s.version      = "0.0.3"
 s.summary      = "Quickly create rich view"
 s.homepage     = "https://github.com/JiGaoFei/GFCustomView"
 s.license      = "MIT"

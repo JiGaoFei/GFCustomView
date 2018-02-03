@@ -24,8 +24,6 @@
 
 #pragma makr - 创建控件
 - (void)setUpGFCustomeUI {
-    // 创建主按钮
-    
     // 创建标题
     self.titleLab = [[UILabel alloc] init];
     self.titleLab.textAlignment = NSTextAlignmentLeft;
