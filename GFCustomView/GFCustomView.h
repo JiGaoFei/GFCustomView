@@ -24,7 +24,7 @@ typedef NS_ENUM (NSInteger, GFCustomViewType)   {
 @interface GFCustomView : UIView
 /**主按钮*/
 @property (nonatomic,strong) UIButton *mainBtn;
-/**类型*/
+/**视图类型*/
 @property (nonatomic,assign) GFCustomViewType gfCustomType;
 /**标题*/
 @property (nonatomic,strong) UILabel *titleLab;
@@ -38,10 +38,18 @@ typedef NS_ENUM (NSInteger, GFCustomViewType)   {
 @property (nonatomic,strong) UIImageView *rightViceImageView;
 /**右箭头*/
 @property (nonatomic,strong) UIImageView *rightArrowImageView;
-/**左边间距*/
+/**左边间距(默认10pt)*/
 @property (nonatomic,assign) CGFloat leftMargin;
-/**主标题距左副标题间隔*/
+/**主标题距左副标题间隔(默认10pt)*/
 @property (nonatomic,assign) CGFloat leftAndViceMargin;
-/**右边间距*/
+/**右箭头和副的间隔(默认10pt)*/
+@property (nonatomic,assign) CGFloat rightArrowAndViceMargin;
+/**右边间距(默认10pt*/
 @property (nonatomic,assign) CGFloat rightMargin;
+/**线左间距(默认居左10 pt)*/
+@property (nonatomic,assign) CGFloat lineLeftMargin;
+/**线右边间距(默认居右10 pt)*/
+@property (nonatomic,assign) CGFloat lineRightMargin;
+/**线高(默认1pt)*/
+@property (nonatomic,assign) CGFloat lineHeight;
 @end

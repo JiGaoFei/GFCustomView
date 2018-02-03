@@ -11,4 +11,5 @@ s.platform     = :ios, "8.0"
 s.source       = { :git => "https://github.com/JiGaoFei/GFCustomView.git", :tag => s.version}
 s.source_files  = "GFCustomView/**/*.{h,m}"
 s.requires_arc = true
+s.dependency "Masonry"
 end

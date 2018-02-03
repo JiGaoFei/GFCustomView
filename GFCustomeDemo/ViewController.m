@@ -18,7 +18,7 @@
     [self setUpUI];
 }
 - (void)setUpUI{
-   // 创建标题和左副标题
+    // 创建标题和左副标题
     GFCustomView *titleAndLeftTiteView = [[GFCustomView alloc] init];
     titleAndLeftTiteView.titleLab.text = @"姓名";
     titleAndLeftTiteView.leftViceLab.text =@"GF";
@@ -39,7 +39,7 @@
     titleAndLeftTiteArrowView .titleLab.text = @"姓名";
     titleAndLeftTiteArrowView .leftViceLab.text =@"GF";
     titleAndLeftTiteArrowView .leftViceLab.textColor = [UIColor grayColor];
-    titleAndLeftTiteView.rightArrowImageView.image = [UIImage imageNamed:@"pub_ic_arrow"];
+    titleAndLeftTiteArrowView.rightArrowImageView.image = [UIImage imageNamed:@"pub_ic_arrow"];
     titleAndLeftTiteArrowView.gfCustomType = GFH_Title_LeftViceTitleAndArrow;
     [self.view addSubview:titleAndLeftTiteArrowView ];
     
@@ -68,12 +68,13 @@
         make.height.equalTo(@50);
     }];
     
-    // 创建标题和右副标题箭头
+    // 创建标题和右副标题
     GFCustomView *titleAndRightTiteArrowView = [[GFCustomView alloc] init];
     titleAndRightTiteArrowView .titleLab.text = @"姓名";
     titleAndRightTiteArrowView .rightViceLab.text =@"GF";
     titleAndRightTiteArrowView .rightViceLab.textColor = [UIColor grayColor];
     titleAndRightTiteArrowView.gfCustomType = GFH_Title_RightViceTitleAndArrow;
+     titleAndRightTiteArrowView.rightArrowImageView.image =  [UIImage imageNamed:@"pub_ic_arrow"];
     [self.view addSubview:titleAndRightTiteArrowView ];
     
     // 布局标题和右副标题
@@ -91,7 +92,7 @@
     titleAndleftTFView .rightViceLab.textColor = [UIColor grayColor];
     titleAndleftTFView.gfCustomType = GFH_Title_LeftTextField;
     [self.view addSubview:titleAndleftTFView ];
-    
+
     // 布局标题和左副输入框
     [titleAndleftTFView  mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
@@ -99,7 +100,7 @@
         make.right.equalTo(self.view.mas_right);
         make.height.equalTo(@50);
     }];
-    
+
     // 创建标题和右副图  右箭头
     GFCustomView *titleAndRightImgeAndArrow= [[GFCustomView alloc] init];
     titleAndRightImgeAndArrow .titleLab.text = @"姓名";
@@ -107,7 +108,7 @@
     titleAndRightImgeAndArrow.rightViceImageView.image = [UIImage imageNamed:@"my_ic_qrcard"];
     titleAndRightImgeAndArrow.rightArrowImageView.image = [UIImage imageNamed:@"pub_ic_arrow"];
     [self.view addSubview:titleAndRightImgeAndArrow ];
-    
+
     // 布局标题和右副图 右箭头
     [titleAndRightImgeAndArrow  mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
@@ -115,7 +116,7 @@
         make.right.equalTo(self.view.mas_right);
         make.height.equalTo(@50);
     }];
-    
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

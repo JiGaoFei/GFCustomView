@@ -15,7 +15,6 @@
 		BB1CC7602022099500F68952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1CC75F2022099500F68952 /* Assets.xcassets */; };
 		BB1CC7632022099500F68952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1CC7612022099500F68952 /* LaunchScreen.storyboard */; };
 		BB1CC76D20220A0900F68952 /* GFCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC76C20220A0900F68952 /* GFCustomView.m */; };
-		BB1CC77020221C8300F68952 /* GFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC76F20221C8300F68952 /* GFCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +33,6 @@
 		BB1CC7642022099500F68952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1CC76B20220A0900F68952 /* GFCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomView.h; sourceTree = "<group>"; };
 		BB1CC76C20220A0900F68952 /* GFCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomView.m; sourceTree = "<group>"; };
-		BB1CC76E20221C8300F68952 /* GFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomCell.h; sourceTree = "<group>"; };
-		BB1CC76F20221C8300F68952 /* GFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +112,6 @@
 			children = (
 				BB1CC76B20220A0900F68952 /* GFCustomView.h */,
 				BB1CC76C20220A0900F68952 /* GFCustomView.m */,
-				BB1CC76E20221C8300F68952 /* GFCustomCell.h */,
-				BB1CC76F20221C8300F68952 /* GFCustomCell.m */,
 			);
 			path = GFCustomView;
 			sourceTree = "<group>";
@@ -252,7 +247,6 @@
 			files = (
 				BB1CC76D20220A0900F68952 /* GFCustomView.m in Sources */,
 				BB1CC75B2022099500F68952 /* ViewController.m in Sources */,
-				BB1CC77020221C8300F68952 /* GFCustomCell.m in Sources */,
 				BB1CC7582022099500F68952 /* AppDelegate.m in Sources */,
 				BB1CC7552022099500F68952 /* main.m in Sources */,
 			);

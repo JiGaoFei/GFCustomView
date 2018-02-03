@@ -84,45 +84,46 @@
             [self layoutGFH_Title_RightViceTitleAndArrow];
         }
             break;
-            case  GFH_Title_LeftTextField:
+        case  GFH_Title_LeftTextField:
         {
             // 布局标题和左输入框
             [self layoutGFH_Title_LeftTextField];
         }
-           break;
-            case GFH_Title_RightViceimageViewAndArrow:
+            break;
+        case GFH_Title_RightViceimageViewAndArrow:
         {
             // 布局标题  右副图 右副箭头
             [self layoutGFH_Title_RightViceimageViewAndArrow];
         }
-             default:
+        default:
             break;
-       
+            
     }
 }
 
 #pragma mark - 布局线
 - (void)layoutGFlineView
 {
-    // 布局线
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left);
-        make.right.equalTo(self.mas_right);
+        make.left.equalTo(self.mas_left).offset(self.lineLeftMargin?self.lineLeftMargin:10);
+        make.right.equalTo(self.mas_right).offset(self.lineRightMargin?(-self.lineRightMargin):-10);
         make.bottom.equalTo(self.mas_bottom);
-        make.height.equalTo(@1);
+        make.height.equalTo(self.lineHeight?@(self.lineHeight):@1);
     }];
+    
+    
 }
 #pragma mark - 标题 左副标题
 - (void)layoutGFH_Title_LeftViceTitle
 {
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     // 布局左副标题
     [self.leftViceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLab.mas_right).offset(10);
+        make.left.equalTo(self.titleLab.mas_right).offset(self.leftAndViceMargin?self.leftAndViceMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -131,19 +132,19 @@
 {
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     
     // 布局左副标题
     [self.leftViceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLab.mas_right).offset(10);
+        make.left.equalTo(self.titleLab.mas_right).offset(self.leftAndViceMargin?self.leftAndViceMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     
     // 布局右箭头
     [self.rightArrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-10);
+        make.right.equalTo(self.mas_right).offset(self.rightMargin?(-self.rightMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -151,12 +152,12 @@
 - (void)layoutGFH_Title_RightViceTitle{
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     // 布局右副标题
     [self.rightViceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-10);
+        make.right.equalTo(self.mas_right).offset(self.rightMargin?(-self.rightMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -165,18 +166,17 @@
 {
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     // 布局右箭头
     [self.rightArrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-10);
+        make.right.equalTo(self.mas_right).offset(self.rightMargin?(-self.rightMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
-    
     // 布局右副标题
     [self.rightViceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.rightArrowImageView.mas_left).offset(-10);
+make.right.equalTo(self.rightArrowImageView.mas_left).offset(self.rightArrowAndViceMargin?(-self.rightArrowAndViceMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -185,12 +185,12 @@
 {
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     // 布局左副输入框
     [self.leftViceTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLab.mas_right).offset(10);
+        make.left.equalTo(self.titleLab.mas_right).offset(self.leftAndViceMargin?self.leftAndViceMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -199,18 +199,18 @@
 {
     // 布局标题
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(self.mas_left).offset(self.leftMargin?self.leftMargin:10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     // 布局右箭头
     [self.rightArrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right).offset(-10);
+        make.right.equalTo(self.mas_right).offset(self.rightMargin?(-self.rightMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
     
     // 布局右副图
     [self.rightViceImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.rightArrowImageView.mas_left).offset(-10);
+        make.right.equalTo(self.rightArrowImageView.mas_left).offset(self.rightArrowAndViceMargin?(-self.rightArrowAndViceMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
