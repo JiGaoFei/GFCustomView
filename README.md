@@ -1,2 +1,3 @@
 # GFCustomView
-Quickly create rich view
+*Quickly create rich view
+* Installation with CocoaPods：`pod 'GFCustomView'`
