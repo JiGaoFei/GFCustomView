@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 加载UI
-    [self setUpUI];
+   // [self setUpUI];
 }
 - (void)setUpUI{
     // 创建标题和左副标题
