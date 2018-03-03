@@ -1,18 +1,18 @@
 //
-//  GFCustomView.m
+//  GFCellView.m
 //  GFCustomeDemo
 //
-//  Created by 纪高飞 on 18/1/31.
+//  Created by 孙行者网络 on 2018/3/3.
 //  Copyright © 2018年 纪高飞. All rights reserved.
 //
 
-#import "GFCustomView.h"
+#import "GFCellView.h"
 #import <Masonry/Masonry.h>
-@interface GFCustomView()
+@interface GFCellView()
 /**线*/
 @property (nonatomic,strong) UIView *lineView;
 @end
-@implementation GFCustomView
+@implementation GFCellView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -175,7 +175,7 @@
     }];
     // 布局右副标题
     [self.rightViceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-make.right.equalTo(self.rightArrowImageView.mas_left).offset(self.rightArrowAndViceMargin?(-self.rightArrowAndViceMargin):-10);
+        make.right.equalTo(self.rightArrowImageView.mas_left).offset(self.rightArrowAndViceMargin?(-self.rightArrowAndViceMargin):-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
@@ -213,4 +213,5 @@ make.right.equalTo(self.rightArrowImageView.mas_left).offset(self.rightArrowAndV
         make.centerY.equalTo(self.mas_centerY);
     }];
 }
+
 @end

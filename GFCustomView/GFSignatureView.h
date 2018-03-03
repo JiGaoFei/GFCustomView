@@ -1,11 +1,13 @@
 //
-//  GFCustomView.h
+//  GFSignatureView.h
 //  GFCustomeDemo
 //
-//  Created by 纪高飞 on 18/1/31.
+//  Created by 孙行者网络 on 2018/3/3.
 //  Copyright © 2018年 纪高飞. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "GFCellView.h"
-#import "GFSignatureView.h"
+
+@interface GFSignatureView : UIView
+
+@end

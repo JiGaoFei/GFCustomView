@@ -19,7 +19,7 @@
 }
 - (void)setUpUI{
     // 创建标题和左副标题
-    GFCustomView *titleAndLeftTiteView = [[GFCustomView alloc] init];
+    GFCellView*titleAndLeftTiteView = [[GFCellView alloc] init];
     titleAndLeftTiteView.titleLab.text = @"姓名";
     titleAndLeftTiteView.leftViceLab.text =@"GF";
     titleAndLeftTiteView.leftViceLab.textColor = [UIColor grayColor];
@@ -35,7 +35,7 @@
     }];
     
     // 创建标题和左副标题 右箭头
-    GFCustomView *titleAndLeftTiteArrowView = [[GFCustomView alloc] init];
+    GFCellView *titleAndLeftTiteArrowView = [[GFCellView alloc] init];
     titleAndLeftTiteArrowView .titleLab.text = @"姓名";
     titleAndLeftTiteArrowView .leftViceLab.text =@"GF";
     titleAndLeftTiteArrowView .leftViceLab.textColor = [UIColor grayColor];
@@ -53,7 +53,7 @@
     
     
     // 创建标题和右副标题
-    GFCustomView *titleAndRightTiteView = [[GFCustomView alloc] init];
+    GFCellView *titleAndRightTiteView = [[GFCellView alloc] init];
     titleAndRightTiteView.titleLab.text = @"姓名";
     titleAndRightTiteView.rightViceLab.text =@"GF";
     titleAndRightTiteView.rightViceLab.textColor = [UIColor grayColor];
@@ -69,7 +69,7 @@
     }];
     
     // 创建标题和右副标题
-    GFCustomView *titleAndRightTiteArrowView = [[GFCustomView alloc] init];
+    GFCellView *titleAndRightTiteArrowView = [[GFCellView alloc] init];
     titleAndRightTiteArrowView .titleLab.text = @"姓名";
     titleAndRightTiteArrowView .rightViceLab.text =@"GF";
     titleAndRightTiteArrowView .rightViceLab.textColor = [UIColor grayColor];
@@ -86,7 +86,7 @@
     }];
     
     // 创建标题和左副输入框
-    GFCustomView *titleAndleftTFView = [[GFCustomView alloc] init];
+    GFCellView *titleAndleftTFView = [[GFCellView alloc] init];
     titleAndleftTFView .titleLab.text = @"姓名";
     titleAndleftTFView .leftViceTextField.placeholder = @"请输入姓名";
     titleAndleftTFView .rightViceLab.textColor = [UIColor grayColor];
@@ -102,7 +102,7 @@
     }];
 
     // 创建标题和右副图  右箭头
-    GFCustomView *titleAndRightImgeAndArrow= [[GFCustomView alloc] init];
+    GFCellView *titleAndRightImgeAndArrow= [[GFCellView alloc] init];
     titleAndRightImgeAndArrow .titleLab.text = @"姓名";
     titleAndRightImgeAndArrow.gfCustomType = GFH_Title_RightViceimageViewAndArrow;
     titleAndRightImgeAndArrow.rightViceImageView.image = [UIImage imageNamed:@"my_ic_qrcard"];

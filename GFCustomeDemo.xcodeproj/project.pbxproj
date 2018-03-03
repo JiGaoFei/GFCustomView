@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		81A1E763699D9EEC98C044F2 /* Pods_GFCustomeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B83C9E98A08D47D8E3968FA /* Pods_GFCustomeDemo.framework */; };
+		9333A63E204A4CF200D60ADC /* GFSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333A63D204A4CF200D60ADC /* GFSignatureView.m */; };
+		9333A641204A4D9700D60ADC /* GFCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333A640204A4D9700D60ADC /* GFCellView.m */; };
 		BB1CC7552022099500F68952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC7542022099500F68952 /* main.m */; };
 		BB1CC7582022099500F68952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC7572022099500F68952 /* AppDelegate.m */; };
 		BB1CC75B2022099500F68952 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC75A2022099500F68952 /* ViewController.m */; };
 		BB1CC75E2022099500F68952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1CC75C2022099500F68952 /* Main.storyboard */; };
 		BB1CC7602022099500F68952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1CC75F2022099500F68952 /* Assets.xcassets */; };
 		BB1CC7632022099500F68952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1CC7612022099500F68952 /* LaunchScreen.storyboard */; };
-		BB1CC76D20220A0900F68952 /* GFCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC76C20220A0900F68952 /* GFCustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B83C9E98A08D47D8E3968FA /* Pods_GFCustomeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GFCustomeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9333A63C204A4CF200D60ADC /* GFSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFSignatureView.h; sourceTree = "<group>"; };
+		9333A63D204A4CF200D60ADC /* GFSignatureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFSignatureView.m; sourceTree = "<group>"; };
+		9333A63F204A4D9700D60ADC /* GFCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFCellView.h; sourceTree = "<group>"; };
+		9333A640204A4D9700D60ADC /* GFCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFCellView.m; sourceTree = "<group>"; };
 		99492643587AA3B96DA2E6E1 /* Pods-GFCustomeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GFCustomeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GFCustomeDemo/Pods-GFCustomeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA21CF73013762B5A83D556 /* Pods-GFCustomeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GFCustomeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GFCustomeDemo/Pods-GFCustomeDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BB1CC7502022099500F68952 /* GFCustomeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GFCustomeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +37,6 @@
 		BB1CC7622022099500F68952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1CC7642022099500F68952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1CC76B20220A0900F68952 /* GFCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCustomView.h; sourceTree = "<group>"; };
-		BB1CC76C20220A0900F68952 /* GFCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				BB1CC76B20220A0900F68952 /* GFCustomView.h */,
-				BB1CC76C20220A0900F68952 /* GFCustomView.m */,
+				9333A63C204A4CF200D60ADC /* GFSignatureView.h */,
+				9333A63D204A4CF200D60ADC /* GFSignatureView.m */,
+				9333A63F204A4D9700D60ADC /* GFCellView.h */,
+				9333A640204A4D9700D60ADC /* GFCellView.m */,
 			);
 			path = GFCustomView;
 			sourceTree = "<group>";
@@ -245,10 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB1CC76D20220A0900F68952 /* GFCustomView.m in Sources */,
+				9333A641204A4D9700D60ADC /* GFCellView.m in Sources */,
 				BB1CC75B2022099500F68952 /* ViewController.m in Sources */,
 				BB1CC7582022099500F68952 /* AppDelegate.m in Sources */,
 				BB1CC7552022099500F68952 /* main.m in Sources */,
+				9333A63E204A4CF200D60ADC /* GFSignatureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
