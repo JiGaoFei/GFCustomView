@@ -9,12 +9,15 @@
 #import "ViewController.h"
 #import "GFCustomView.h"
 #import <Masonry/Masonry.h>
-@interface ViewController ()
+@interface ViewController ()<GFSignatureViewDelegate>
+/**签名视图*/
+@property (nonatomic,strong) GFSignatureView  *signatureView;
 @end
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 加载UI
+    [self setUpSignatureView];
    // [self setUpUI];
 }
 - (void)setUpUI{
@@ -117,6 +120,19 @@
         make.height.equalTo(@50);
     }];
 
+}
+- (void)setUpSignatureView
+{
+    self.signatureView = [[GFSignatureView alloc] init];
+    self.signatureView.delegate = self;
+}
+- (void)gf_submitAction:(UIImage *)gfSignatureImage
+{
+    NSLog(@"已经提交");
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.signatureView gf_showSignatureView];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

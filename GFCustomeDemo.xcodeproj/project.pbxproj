@@ -157,7 +157,7 @@
 				TargetAttributes = {
 					BB1CC74F2022099500F68952 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 86V352F7YW;
+						DevelopmentTeam = 8YUTCZ5YC9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -375,7 +375,7 @@
 			baseConfigurationReference = 99492643587AA3B96DA2E6E1 /* Pods-GFCustomeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 86V352F7YW;
+				DEVELOPMENT_TEAM = 8YUTCZ5YC9;
 				INFOPLIST_FILE = GFCustomeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jigaofei.GFCustomeDemo;
@@ -388,7 +388,7 @@
 			baseConfigurationReference = 9CA21CF73013762B5A83D556 /* Pods-GFCustomeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 86V352F7YW;
+				DEVELOPMENT_TEAM = 8YUTCZ5YC9;
 				INFOPLIST_FILE = GFCustomeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jigaofei.GFCustomeDemo;
