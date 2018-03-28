@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81A1E763699D9EEC98C044F2 /* Pods_GFCustomeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B83C9E98A08D47D8E3968FA /* Pods_GFCustomeDemo.framework */; };
+		932667E220609D7E002E8FAC /* GFScrollMenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 932667E120609D7E002E8FAC /* GFScrollMenView.m */; };
 		9333A63E204A4CF200D60ADC /* GFSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333A63D204A4CF200D60ADC /* GFSignatureView.m */; };
 		9333A641204A4D9700D60ADC /* GFCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333A640204A4D9700D60ADC /* GFCellView.m */; };
 		BB1CC7552022099500F68952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1CC7542022099500F68952 /* main.m */; };
@@ -20,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		0B83C9E98A08D47D8E3968FA /* Pods_GFCustomeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GFCustomeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		932667E020609D7E002E8FAC /* GFScrollMenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFScrollMenView.h; sourceTree = "<group>"; };
+		932667E120609D7E002E8FAC /* GFScrollMenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFScrollMenView.m; sourceTree = "<group>"; };
 		9333A63C204A4CF200D60ADC /* GFSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFSignatureView.h; sourceTree = "<group>"; };
 		9333A63D204A4CF200D60ADC /* GFSignatureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFSignatureView.m; sourceTree = "<group>"; };
 		9333A63F204A4D9700D60ADC /* GFCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFCellView.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				BB1CC76B20220A0900F68952 /* GFCustomView.h */,
 				9333A63C204A4CF200D60ADC /* GFSignatureView.h */,
 				9333A63D204A4CF200D60ADC /* GFSignatureView.m */,
+				932667E020609D7E002E8FAC /* GFScrollMenView.h */,
+				932667E120609D7E002E8FAC /* GFScrollMenView.m */,
 				9333A63F204A4D9700D60ADC /* GFCellView.h */,
 				9333A640204A4D9700D60ADC /* GFCellView.m */,
 			);
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9333A641204A4D9700D60ADC /* GFCellView.m in Sources */,
+				932667E220609D7E002E8FAC /* GFScrollMenView.m in Sources */,
 				BB1CC75B2022099500F68952 /* ViewController.m in Sources */,
 				BB1CC7582022099500F68952 /* AppDelegate.m in Sources */,
 				BB1CC7552022099500F68952 /* main.m in Sources */,

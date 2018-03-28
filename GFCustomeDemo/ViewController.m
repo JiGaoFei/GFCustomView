@@ -12,13 +12,17 @@
 @interface ViewController ()<GFSignatureViewDelegate>
 /**签名视图*/
 @property (nonatomic,strong) GFSignatureView  *signatureView;
+/**滚动视图*/
+@property (nonatomic,strong) GFScrollMenView *scrollMenView;
 @end
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 加载UI
-    [self setUpSignatureView];
+//    [self setUpSignatureView];
    // [self setUpUI];
+    // 滚动视图
+    [self setUpGFScrollMenUI];
 }
 - (void)setUpUI{
     // 创建标题和左副标题
@@ -126,6 +130,7 @@
     self.signatureView = [[GFSignatureView alloc] init];
     self.signatureView.delegate = self;
 }
+
 - (void)gf_submitAction:(UIImage *)gfSignatureImage
 {
     NSLog(@"已经提交");
@@ -133,6 +138,18 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.signatureView gf_showSignatureView];
+}
+- (void)setUpGFScrollMenUI
+{
+    self.scrollMenView = [[GFScrollMenView alloc] init];
+    self.scrollMenView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:self.scrollMenView];
+    [self.scrollMenView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.top.equalTo(self.view.mas_top).offset(64);
+        make.right.equalTo(self.view.mas_right);
+        make.height.equalTo(@150);
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
