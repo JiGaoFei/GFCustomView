@@ -128,7 +128,9 @@
 #pragma mark - 事件
 - (void)clickButtonAction:(UIButton *)button
 {
-    NSLog(@"点击的是第%ld个",button.tag - 100);
+    if (self.gfScrollMenViewClickIndex) {
+        self.gfScrollMenViewClickIndex(button.tag -100);
+    }
 }
 
 @end

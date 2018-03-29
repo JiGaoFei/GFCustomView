@@ -154,6 +154,9 @@
     self.scrollMenView.pageTintColor = [UIColor orangeColor];
     // 指示器当前页圆点颜色
     self.scrollMenView.currentPageTintColor = [UIColor redColor];
+    self.scrollMenView.gfScrollMenViewClickIndex = ^(NSInteger index) {
+        NSLog(@"点击的是第----%ld个",(long)index);
+    };
     [self.view addSubview:self.scrollMenView];
     [self.scrollMenView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);

@@ -23,6 +23,8 @@
 @property (nonatomic,strong) UIColor *pageTintColor;
 /**当前颜色*/
 @property (nonatomic,strong) UIColor *currentPageTintColor;
+/**选中序列*/
+@property (nonatomic,copy) void(^gfScrollMenViewClickIndex)(NSInteger index);
 @end
 @interface GFScrollMenCell:UIView
 /**icon*/
@@ -31,4 +33,5 @@
 @property (nonatomic,strong) UILabel *titleLabel;
 /**按钮*/
 @property (nonatomic,strong) UIButton *clickButton;
+
 @end
