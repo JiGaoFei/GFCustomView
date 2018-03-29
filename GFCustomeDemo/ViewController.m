@@ -142,13 +142,19 @@
 - (void)setUpGFScrollMenUI
 {
     self.scrollMenView = [[GFScrollMenView alloc] init];
-    self.scrollMenView.backgroundColor = [UIColor orangeColor];
+    self.scrollMenView.titlesArray = @[@"推荐车位",@"车位出售",@"车位长租",@"车位求购",@"车位求租",@"91车位",@"共享车位",@"车位投建"].mutableCopy;
+    self.scrollMenView.imagesArray =@[@"home_reco",@"home_sale",@"home_rent",@"home_buy",@"home_qz",@"home_cwtz",@"home_gx",@"home_cwtj"].mutableCopy;
+    self.scrollMenView.totallNumber=8;
+   self.scrollMenView.pageNum =4;
+   self.scrollMenView.rowNum =4;
+    self.scrollMenView.pageTintColor = [UIColor orangeColor];
+    self.scrollMenView.currentPageTintColor = [UIColor redColor];
     [self.view addSubview:self.scrollMenView];
     [self.scrollMenView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.top.equalTo(self.view.mas_top).offset(64);
         make.right.equalTo(self.view.mas_right);
-        make.height.equalTo(@150);
+        make.height.equalTo(@90);
     }];
 }
 - (void)didReceiveMemoryWarning {
