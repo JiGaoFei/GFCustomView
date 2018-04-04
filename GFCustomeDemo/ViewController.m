@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GFCustomView.h"
 #import <Masonry/Masonry.h>
+#import "TableIndexViewController.h"
 @interface ViewController ()<GFSignatureViewDelegate>
 /**签名视图*/
 @property (nonatomic,strong) GFSignatureView  *signatureView;
@@ -22,7 +23,7 @@
 //    [self setUpSignatureView];
    // [self setUpUI];
     // 滚动视图
-    [self setUpGFScrollMenUI];
+//    [self setUpGFScrollMenUI];
 }
 - (void)setUpUI{
     // 创建标题和左副标题
@@ -137,7 +138,9 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.signatureView gf_showSignatureView];
+//    [self.signatureView gf_showSignatureView];
+    TableIndexViewController *indexVC = [[TableIndexViewController alloc] init];
+    [self.navigationController pushViewController:indexVC animated:YES];
 }
 - (void)setUpGFScrollMenUI
 {
@@ -165,6 +168,7 @@
         make.height.equalTo(@90);
     }];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

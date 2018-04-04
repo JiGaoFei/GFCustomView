@@ -10,3 +10,4 @@
 #import "GFCellView.h"
 #import "GFSignatureView.h"
 #import "GFScrollMenView.h"
+#import "GFIndexView.h"
