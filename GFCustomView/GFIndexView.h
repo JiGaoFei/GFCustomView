@@ -7,24 +7,8 @@
 
 
 #import <UIKit/UIKit.h>
-//字体变化率
-#define FONT_RATE 1/8.000
-//透明度变化率
-#define ALPHA_RATE 1/80.0000
-//初始状态索引颜色
-#define STR_COLOR [UIColor orangeColor]
-//选中状态索引颜色
-#define MARK_COLOR [UIColor blackColor]
-//初始状态索引大小
-#define FONT_SIZE [UIFont systemFontOfSize:10]
-//索引label的tag值(防止冲突)
-#define TAG 233333
-//圆的半径
-#define ANIMATION_HEIGHT 80
 typedef void  (^GFIndexBlock)(NSInteger);
 @interface GFIndexView : UIView
-/**动画视图*/
-@property (nonatomic,strong) UILabel *animationLabel;
 /**索引数组*/
 @property (nonatomic,strong) NSMutableArray *indexTitleArray;
 /**滑动回调*/
@@ -36,5 +20,5 @@ typedef void  (^GFIndexBlock)(NSInteger);
 /**
  *  初始化
  */
-- (instancetype)initWithFrame:(CGRect)frame indexTitleArray:(NSMutableArray *)array;
+- (instancetype)initWithFrame:(CGRect)frame indexTitleArray:(NSMutableArray *)array fontSize:(CGFloat)fontSize textNomorColor:(UIColor *)textNomorColor textSelectColor:(UIColor *)selectColor;
 @end

@@ -4,9 +4,27 @@
 
 #import "GFIndexView.h"
 #import <Masonry/Masonry.h>
-#define WIDTH [UIScreen mainScreen].bounds.size.width
-#define HEIGHT [UIScreen mainScreen].bounds.size.height
+//字体变化率
+#define GF_FONT_RATE 1/10.000
+//透明度变化率
+#define GF_ALPHA_RATE 1/100.0000
+// 屏幕宽
+#define GF_WIDTH [UIScreen mainScreen].bounds.size.width
+// 屏幕高
+#define GF_HEIGHT [UIScreen mainScreen].bounds.size.height
+//索引label的tag值
+#define GF_TAG 666666
 @interface GFIndexView ()
+/**圆的半径*/
+@property (nonatomic,assign) CGFloat animationRadius;
+/**普通字体颜色*/
+@property (nonatomic,strong) UIColor *textNomorColor;
+/**选中字体颜色*/
+@property (nonatomic,strong) UIColor *textSelectColor;
+/**字体大小*/
+@property (nonatomic,assign) CGFloat fontSize;
+/**动画视图*/
+@property (nonatomic,strong) UILabel *animationLabel;
 @end
 @implementation GFIndexView
 #pragma mark - 懒加载
@@ -18,9 +36,17 @@
     return _indexTitleArray;
 }
 #pragma makr 创建控件
-- (instancetype)initWithFrame:(CGRect)frame indexTitleArray:(NSMutableArray *)array
+- (instancetype)initWithFrame:(CGRect)frame indexTitleArray:(NSMutableArray *)array fontSize:(CGFloat)fontSize textNomorColor:(UIColor *)textNomorColor textSelectColor:(UIColor *)selectColor
 {
     if ([super initWithFrame:frame]) {
+        // 半径默认80
+        self.animationRadius =80;
+        // 普通字体颜色
+        self.textNomorColor = textNomorColor;
+        // 选中字体颜色
+        self.textSelectColor = selectColor;
+        // 字体
+        self.fontSize = fontSize;
         // 赋值
         self.indexTitleArray = array;
         // 创建展示label
@@ -30,7 +56,18 @@
     }
     return self;
 }
+#pragma mark Set方法
 
+// 设置动画半径
+- (void)setAnimationRadius:(CGFloat)animationRadius
+{
+    _animationRadius = animationRadius;
+    if (_animationRadius>0) {
+        _animationRadius = animationRadius;
+    }else{
+       _animationRadius = 60;
+    }
+}
 #pragma mark - 创建UI
 - (void)initView {
     // 创建展示
@@ -53,10 +90,10 @@
     {
         UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, i * hh, self.frame.size.width, hh)];
         label.text = self.indexTitleArray[i];
-        label.tag = TAG + i;
+        label.tag = GF_TAG + i;
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = STR_COLOR;
-        label.font = FONT_SIZE;
+        label.textColor = self.textNomorColor;
+        label.font = [UIFont systemFontOfSize:self.fontSize];
         [self addSubview:label];
         _number = label.font.pointSize;
     }
@@ -77,12 +114,12 @@
     
     for (int i = 0; i < self.indexTitleArray.count; i ++)
     {
-        UILabel * label = (UILabel *)[self viewWithTag:TAG + i];
+        UILabel * label = (UILabel *)[self viewWithTag:GF_TAG + i];
         [UIView animateWithDuration:0.2 animations:^{
             label.center = CGPointMake(self.frame.size.width/2, i * hh + hh/2);
-            label.font = FONT_SIZE;
+            label.font = [UIFont systemFontOfSize:self.fontSize];
             label.alpha = 1.0;
-            label.textColor = STR_COLOR;
+            label.textColor =self.textNomorColor;
         }];
     }
     
@@ -103,30 +140,30 @@
     
     for (int i = 0; i < self.indexTitleArray.count; i ++)
     {
-        UILabel * label = (UILabel *)[self viewWithTag:TAG + i];
+        UILabel * label = (UILabel *)[self viewWithTag:GF_TAG + i];
         // fabs求绝对值
-        if (fabs(label.center.y - point.y) <= ANIMATION_HEIGHT)
+        if (fabs(label.center.y - point.y) <= self.animationRadius)
         {
             [UIView animateWithDuration:0.2 animations:^{
                 // 计算动画中的中心
-                label.center = CGPointMake(label.bounds.size.width/2 - sqrt(fabs(ANIMATION_HEIGHT * ANIMATION_HEIGHT - fabs(label.center.y - point.y) * fabs(label.center.y - point.y))), label.center.y);
+                label.center = CGPointMake(label.bounds.size.width/2 - sqrt(fabs(self.animationRadius * self.animationRadius - fabs(label.center.y - point.y) * fabs(label.center.y - point.y))), label.center.y);
                 // 字体
-                label.font = [UIFont systemFontOfSize:_number + (ANIMATION_HEIGHT - fabs(label.center.y - point.y)) * FONT_RATE];
+                label.font = [UIFont systemFontOfSize:_number + (self.animationRadius - fabs(label.center.y - point.y)) * GF_FONT_RATE];
                 
-                if (fabs(label.center.y - point.y) * ALPHA_RATE <= 0.08)
+                if (fabs(label.center.y - point.y) * GF_ALPHA_RATE <= 0.08)
                 {
-                    label.textColor = MARK_COLOR;
+                    label.textColor =  self.textSelectColor;
                     label.alpha = 1.0;
                     
                     [self animationWithSection:i];
                     
                     for (int j = 0; j < self.indexTitleArray.count; j ++)
                     {
-                        UILabel * label = (UILabel *)[self viewWithTag:TAG + j];
+                        UILabel * label = (UILabel *)[self viewWithTag:GF_TAG + j];
                         if (i != j)
                         {
-                            label.textColor = STR_COLOR;
-                            label.alpha = fabs(label.center.y - point.y) * ALPHA_RATE;
+                            label.textColor = self.textNomorColor;
+                            label.alpha = fabs(label.center.y - point.y) * GF_ALPHA_RATE;
                         }
                     }
                 }
@@ -137,7 +174,7 @@
             [UIView animateWithDuration:0.2 animations:^
              {
                  label.center = CGPointMake(self.frame.size.width/2, i * hh + hh/2);
-                 label.font = FONT_SIZE;
+                 label.font =[UIFont systemFontOfSize:self.fontSize];
                  label.alpha = 1.0;
              }];
         }
@@ -174,7 +211,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.animationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(-WIDTH/2 + self.frame.size.width/2);
+        make.left.equalTo(self.mas_left).offset(-GF_WIDTH/2 + self.frame.size.width/2);
         make.centerY.equalTo(self.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(60, 60));
     }];

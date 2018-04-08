@@ -31,8 +31,7 @@
     self.tabelView.dataSource = self;
     [self.view addSubview:self.tabelView];
 
-//    self.indexView = [[GFIndexView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140) ];
-    self.indexView = [[GFIndexView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry];
+    self.indexView = [[GFIndexView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry fontSize:18 textNomorColor:[UIColor blackColor] textSelectColor:[UIColor orangeColor]];
     [_indexView gf_selecctIndexBlock:^(NSInteger section)
      {
          [self.tabelView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]
@@ -40,13 +39,6 @@
                            scrollPosition:UITableViewScrollPositionTop];
      }];
     [self.view addSubview:_indexView];
-//    [self.indexView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view.mas_top).offset(100);
-//        make.right.equalTo(self.view.mas_right);
-//        make.width.equalTo(@40);
-//        make.bottom.equalTo(self.view.mas_bottom).offset(40);
-//    }];
-
 }
 
 #pragma mark - tableviewDegate、DataSource
