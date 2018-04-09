@@ -94,7 +94,11 @@
 - (void)initWaterView{
     // 创建水滴
     self.waterImageView = [[UIImageView alloc] init];
-    self.waterImageView.image = [UIImage imageNamed:@"ic_fd@3x"];
+    // 设置文件路径
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"GFCustomView" ofType:@"bundle"];
+    NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
+    NSString *waterImageStr = [resourceBundle pathForResource:@"ic_fd@3x" ofType:@"png"];
+    self.waterImageView.image = [UIImage imageNamed:waterImageStr];
     self.waterImageView.alpha = 0;
     self.waterImageView.userInteractionEnabled = YES;
     [self addSubview:self.waterImageView];
