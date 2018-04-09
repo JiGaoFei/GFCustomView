@@ -32,7 +32,7 @@
     self.tabelView.dataSource = self;
     [self.view addSubview:self.tabelView];
 
-    self.indexView = [[GFIndexToastView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry fontSize:18 textNomorColor:[UIColor blackColor] textSelectColor:[UIColor colorWithRed:0/250.0 green:190/250.0 blue:159/250.0 alpha:1] toastType:GFIndexToastWarerType];
+    self.indexView = [[GFIndexToastView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry fontSize:18 textNomorColor:[UIColor orangeColor] textSelectColor:[UIColor colorWithRed:0/250.0 green:190/250.0 blue:159/250.0 alpha:1] toastType:GFIndexToastWarerType];
     [_indexView gf_selecctIndexBlock:^(NSInteger section)  
      {
          [self.tabelView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]

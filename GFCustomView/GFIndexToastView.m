@@ -147,7 +147,7 @@
     for (int i = 0; i < self.indexTitleArray.count; i ++)
     {
         UILabel * label = (UILabel *)[self viewWithTag:GF_TAG + i];
-        label.textColor = [UIColor blackColor];
+        label.textColor =self.textNomorColor;
         // fabs求绝对值
         if (fabs(label.center.y - point.y) <= hh/2)
         {
