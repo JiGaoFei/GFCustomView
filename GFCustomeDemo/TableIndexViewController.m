@@ -3,7 +3,8 @@
 /***************************************/
 
 #import "TableIndexViewController.h"
-#import "GFIndexView.h"
+#import "GFIndexFloatView.h"
+#import "GFIndexToastView.h"
 #import <Masonry/Masonry.h>
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -12,7 +13,7 @@
 /**数据源*/
 @property (nonatomic,strong) NSMutableArray *titleAry;
 /**index*/
-@property (nonatomic,strong) GFIndexView *indexView;
+@property (nonatomic,strong) GFIndexToastView *indexView;
 @end
 
 @implementation TableIndexViewController
@@ -31,8 +32,8 @@
     self.tabelView.dataSource = self;
     [self.view addSubview:self.tabelView];
 
-    self.indexView = [[GFIndexView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry fontSize:18 textNomorColor:[UIColor blackColor] textSelectColor:[UIColor orangeColor]];
-    [_indexView gf_selecctIndexBlock:^(NSInteger section)
+    self.indexView = [[GFIndexToastView alloc]initWithFrame:CGRectMake(WIDTH - 40, 100, 40, HEIGHT - 140)  indexTitleArray:self.titleAry fontSize:18 textNomorColor:[UIColor blackColor] textSelectColor:[UIColor colorWithRed:0/250.0 green:190/250.0 blue:159/250.0 alpha:1] toastType:GFIndexToastWarerType];
+    [_indexView gf_selecctIndexBlock:^(NSInteger section)  
      {
          [self.tabelView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]
                                  animated:NO

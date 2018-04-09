@@ -2,7 +2,7 @@
 /*  Life is a palette， you put colors on it.    */
 /***************************************/
 
-#import "GFIndexView.h"
+#import "GFIndexFloatView.h"
 #import <Masonry/Masonry.h>
 //字体变化率
 #define GF_FONT_RATE 1/10.000
@@ -14,7 +14,7 @@
 #define GF_HEIGHT [UIScreen mainScreen].bounds.size.height
 //索引label的tag值
 #define GF_TAG 666666
-@interface GFIndexView ()
+@interface GFIndexFloatView ()
 /**圆的半径*/
 @property (nonatomic,assign) CGFloat animationRadius;
 /**普通字体颜色*/
@@ -26,7 +26,7 @@
 /**动画视图*/
 @property (nonatomic,strong) UILabel *animationLabel;
 @end
-@implementation GFIndexView
+@implementation GFIndexFloatView
 #pragma mark - 懒加载
 - (NSMutableArray *)indexTitleArray
 {
@@ -81,8 +81,7 @@
     _animationLabel.font = [UIFont systemFontOfSize:22];
     [self addSubview:self.animationLabel];
 }
-
-
+// 创建序列
 - (void)setUpUI
 {
     CGFloat hh = self.frame.size.height/self.indexTitleArray.count;
